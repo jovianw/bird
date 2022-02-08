@@ -11,6 +11,32 @@ var flap_timeout;
 var flap_time = 200;
 var flying = true;
 
+container.addEventListener('click', kill)
+function kill(e) {
+    flying = false;
+    bird_flying2.style.display = "block";
+    bird_flying1.style.display = "none";
+    bird_flying3.style.display = "none";
+    bird_landed.style.display = "none";
+    document.removeEventListener('mousemove', onMouseMove);
+    container.removeEventListener('click', kill);
+    setTimeout(killing, flap_time);
+}
+
+function killing() {
+    flying = false;
+    bird_flying2.style.display = "block";
+    bird_flying1.style.display = "none";
+    bird_flying3.style.display = "none";
+    bird_landed.style.display = "none";
+    bird_flying2.style.WebkitTransitionDuration='1s';
+    bird_flying2.style.transform = 'rotate(180deg)';
+    container.style.transition = "top 2s";
+    container.style.top = "100vh";
+    setTimeout(function() {container.remove();}, 800);
+}
+
+
 function flap_one() {
     clearTimeout(flap_timeout);
     flap_timeout = setTimeout(flap_two, flap_time);
@@ -18,6 +44,7 @@ function flap_one() {
         bird_flying1.style.display = "block";
         bird_flying2.style.display = "none";
         bird_flying3.style.display = "none";
+        bird_landed.style.display = "none";
     }
     grass1.style.display = "block";
     grass2.style.display = "none";
@@ -31,6 +58,7 @@ function flap_two() {
         bird_flying2.style.display = "block";
         bird_flying1.style.display = "none";
         bird_flying3.style.display = "none";
+        bird_landed.style.display = "none";
     }
     grass2.style.display = "block";
     grass1.style.display = "none";
@@ -44,6 +72,7 @@ function flap_three() {
         bird_flying3.style.display = "block";
         bird_flying1.style.display = "none";
         bird_flying2.style.display = "none";
+        bird_landed.style.display = "none";
     }
     grass3.style.display = "block";
     grass1.style.display = "none";
@@ -52,7 +81,6 @@ function flap_three() {
 
 function onMouseMove(e) {
     flying = true;
-    bird_landed.style.display = "none";
     container.style.left = e.pageX + 'px';
     container.style.top = e.pageY + 'px';
     clearTimeout(landed_timeout);
@@ -60,11 +88,13 @@ function onMouseMove(e) {
 }
 
 function landed() {
-    flying = false;
-    bird_landed.style.display = "block";
-    bird_flying1.style.display = "none";
-    bird_flying2.style.display = "none";
-    bird_flying3.style.display = "none";
+    if (flying) {
+        flying = false;
+        bird_landed.style.display = "block";
+        bird_flying1.style.display = "none";
+        bird_flying2.style.display = "none";
+        bird_flying3.style.display = "none";
+    }
 }
 
 window.onload = flap_one;

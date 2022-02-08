@@ -29,6 +29,7 @@ body {
 
 #bird_flying2 {
     display: none;
+    transition: transform 2s;
 }
 
 #bird_flying3 {
