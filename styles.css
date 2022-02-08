@@ -15,8 +15,8 @@ body {
 
 #container {
     position: absolute;
-    height: 10vh;
-    width: 10vh;
+    height: 10vw;
+    width: 10vw;
     transform: translate(-50%, -50%);
     transition: top 1s, left 1s;
 }
@@ -36,5 +36,21 @@ body {
 }
 
 #bird_landed {
+    display: none;
+}
+
+.grass {
+    position: fixed;
+    height: 10vw;
+    width: auto;
+    left: 0;
+    top: calc(100vh - 10vw);
+}
+
+#grass2 {
+    display: none;
+}
+
+#grass3 {
     display: none;
 }

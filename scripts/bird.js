@@ -1,7 +1,11 @@
 let container = document.getElementById('container');
 let bird_flying1 = document.getElementById('bird_flying1');
 let bird_flying2 = document.getElementById('bird_flying2');
+let bird_flying3 = document.getElementById('bird_flying3');
 let bird_landed = document.getElementById('bird_landed');
+let grass1 = document.getElementById('grass1');
+let grass2 = document.getElementById('grass2');
+let grass3 = document.getElementById('grass3');
 var landed_timeout;
 var flap_timeout;
 var flap_time = 200;
@@ -15,6 +19,9 @@ function flap_one() {
         bird_flying2.style.display = "none";
         bird_flying3.style.display = "none";
     }
+    grass1.style.display = "block";
+    grass2.style.display = "none";
+    grass3.style.display = "none";
 }
 
 function flap_two() {
@@ -25,6 +32,9 @@ function flap_two() {
         bird_flying1.style.display = "none";
         bird_flying3.style.display = "none";
     }
+    grass2.style.display = "block";
+    grass1.style.display = "none";
+    grass3.style.display = "none";
 }
 
 function flap_three() {
@@ -35,6 +45,9 @@ function flap_three() {
         bird_flying1.style.display = "none";
         bird_flying2.style.display = "none";
     }
+    grass3.style.display = "block";
+    grass1.style.display = "none";
+    grass2.style.display = "none";
 }
 
 function onMouseMove(e) {
