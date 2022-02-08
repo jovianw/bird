@@ -3,16 +3,6 @@ body {
     font-family: 'EB Garamond';
 }
 
-/* #circle {
-    position: absolute;
-    background-color: white;
-    height: 10vh;
-    width: 10vh;
-    border-radius:50%;
-    transform:translate(-50%,-50%);
-    transition: top 1s, left 1s;
-} */
-
 #text_container {
     display: flexbox;
     align-items: center;
@@ -43,37 +33,16 @@ p {
     top: 100%;
 }
 
-.bird {
+#bird {
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-#bird_flying2 {
-    display: none;
-    transition: transform 2s;
-}
-
-#bird_flying3 {
-    display: none;
-}
-
-#bird_flying1 {
-    display: none;
-}
-
 .grass {
     position: fixed;
-    height: 10vw;
-    width: auto;
+    height: auto;
+    width: 100%;
     left: 0;
-    top: calc(100vh - 10vw + 2px);
-}
-
-#grass2 {
-    display: none;
-}
-
-#grass3 {
-    display: none;
+    bottom: 0;
 }
