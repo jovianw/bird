@@ -6,7 +6,6 @@ var landed_timeout;
 var par_timeout;
 var flying = false;
 
-container.addEventListener('click', kill)
 function kill(e) {
     flying = false;
     // bird.src = "images/dead.png";
@@ -15,7 +14,16 @@ function kill(e) {
     container.style.top = "100vh";
     document.removeEventListener('mousemove', onMouseMove);
     container.removeEventListener('click', kill);
-    setTimeout(function() {container.remove();}, 2000);
+    setTimeout(revive, 2000);
+}
+
+function revive() {
+    container.style.transition = 'top 1s, left 1s';
+    container.style.transform = 'rotate(0deg)'
+    container.style.transform = 'translate(-50%, -50%)';
+    bird.src = "images/landing.gif";
+    flying = false;
+    setUp();
 }
 
 function onMouseMove(e) {
@@ -38,7 +46,8 @@ function landed() {
 
 function setUp() {
     par_timeout = setTimeout(function() {par.style.opacity = 100;}, 2500);
+    container.addEventListener('click', kill)
+    document.addEventListener('mousemove', onMouseMove);
 }
 
 window.onload = setUp;
-document.addEventListener('mousemove', onMouseMove);
