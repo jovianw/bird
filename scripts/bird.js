@@ -85,6 +85,8 @@ function onMouseMove(e) {
     flying = true;
     container.style.left = e.pageX + 'px';
     container.style.top = e.pageY + 'px';
+    clearTimeout(par_timeout);
+    par.style.opacity = 0;
     clearTimeout(landed_timeout);
     landed_timeout = setTimeout(landed, 1000);
 }
