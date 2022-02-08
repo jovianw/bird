@@ -13,7 +13,7 @@ body {
     transition: top 1s, left 1s;
 } */
 
-#bird {
+#container {
     position: absolute;
     height: 10vh;
     width: 10vh;
@@ -21,10 +21,20 @@ body {
     transition: top 1s, left 1s;
 }
 
-#bird_landed {
+.bird {
     position: absolute;
-    height: 10vh;
-    width: 10vh;
-    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+}
+
+#bird_flying2 {
+    display: none;
+}
+
+#bird_flying3 {
+    display: none;
+}
+
+#bird_landed {
     display: none;
 }
