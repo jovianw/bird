@@ -1,0 +1,30 @@
+body {
+    background-color: white;
+    font-family: 'EB Garamond';
+}
+
+/* #circle {
+    position: absolute;
+    background-color: white;
+    height: 10vh;
+    width: 10vh;
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    transition: top 1s, left 1s;
+} */
+
+#bird {
+    position: absolute;
+    height: 10vh;
+    width: 10vh;
+    transform: translate(-50%, -50%);
+    transition: top 1s, left 1s;
+}
+
+#bird_landed {
+    position: absolute;
+    height: 10vh;
+    width: 10vh;
+    transform: translate(-50%, -50%);
+    display: none;
+}
