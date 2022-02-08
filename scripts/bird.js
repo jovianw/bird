@@ -6,10 +6,12 @@ let bird_landed = document.getElementById('bird_landed');
 let grass1 = document.getElementById('grass1');
 let grass2 = document.getElementById('grass2');
 let grass3 = document.getElementById('grass3');
+let par = document.getElementById('par_container');
 var landed_timeout;
 var flap_timeout;
+var par_timeout;
 var flap_time = 200;
-var flying = true;
+var flying = false;
 
 container.addEventListener('click', kill)
 function kill(e) {
@@ -97,5 +99,10 @@ function landed() {
     }
 }
 
-window.onload = flap_one;
+function setUp() {
+    par_timeout = setTimeout(function() {par.style.opacity = 100;}, 2500);
+    flap_one();
+}
+
+window.onload = setUp;
 document.addEventListener('mousemove', onMouseMove);
